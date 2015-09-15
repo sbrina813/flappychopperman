@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+body {
+  font-size: 14px;
+}
+
+p {
+  font-size: 90%;
+  line-height: 25px;
+}
+
+/* Wrapper */
+.wrapper {
+  width: 350px;
+  margin: 20px auto;
+}
+
+/* Window */
+.playScreen {
+	height: 450px;
+	background-color: #96ceb4;
+	position: relative;
+  	overflow: hidden;
+  	margin-bottom: 10px;
+  	z-index:1;
+}
+
+/* Score */
+.score {
+  position: absolute;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 250%;
+  padding-top: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 #000;
+  z-index: 4;
+}
+
+/* chopper */
+@keyframes anim{
+   from { background-position: 0px 0px; }
+   to { background-position: 0px -190px; }
+}
+@-webkit-keyframes anim{
+   from { background-position: 0px 0px; }
+   to { background-position: 0px -190px; }
+}
+.chopper{
+  width:36px;
+  height:38px;   
+  position: absolute;
+  bottom:50%;
+  left:130px;
+  background-image: url('../img/chopper-man.png');
+  z-index: 3;
+  -webkit-animation: anim 450ms steps(5) infinite alternate;
+  animation: anim 450ms steps(5) infinite;
+  transition: transform 0.3s;
+}
+
+/* Pipes */ 
+.pipe {
+	width: 60px;
+	height: 100%;
+	position: absolute;
+	right: -60px;
+	z-index: 2;
+}
+
+.pipe .hidden {
+  display: none;
+}
+
+.pipe .topHalf {
+	background-image: url('../img/pipe.png') bottom;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.pipe .bottomHalf {
+	background: url('../img/pipe.png') top;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
